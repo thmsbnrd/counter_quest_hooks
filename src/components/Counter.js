@@ -5,11 +5,16 @@ function Counter() {
   // Déclare une fonction setCount qui permet de modifier la valeur de count
   const [count, setCount] = useState(0);
 
+  function handleNumberChange(e) {
+    setCount(e.target.value);
+    console.log(setCount)
+  }
+
   return (
     <div>
       <input
           type="number"
-          onChange={(event) => setCount(event.target.value)}
+          onChange={handleNumberChange}
           value={count}
       />
       <p>Le compteur est  à : {count} </p>
